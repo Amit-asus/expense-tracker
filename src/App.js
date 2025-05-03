@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import AddExpenseForm from "./components/AddExpenseForm";
+import CategoryFilter from "./components/CategoryFilter";
+import ExpenseChart from "./components/ExpenseChart";
+import ExpenseList from "./components/ExpenseList";
+import { ExpenseProvider } from "./context/ExpenseContext";
 function App() {
+  console.log("App is rendering...  ");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ExpenseProvider>
+        <h1>My Expense Tracker</h1>
+        <AddExpenseForm />
+        <CategoryFilter />
+        <ExpenseChart />
+        <ExpenseList />
+      </ExpenseProvider>
     </div>
   );
 }
